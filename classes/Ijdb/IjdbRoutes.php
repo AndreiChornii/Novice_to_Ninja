@@ -152,7 +152,15 @@ class IjdbRoutes implements \Ninja\Routes {
 					'controller' => $jokeController,
 					'action' => 'home'
 				]
-			]
+			],
+			'approve' => [
+                'POST' => [
+                    'controller' => $jokeController,
+                    'action' => 'approve'
+				],
+				'login' => true,
+				'permissions' => \Ijdb\Entity\Author::EDIT_USER_ACCESS
+            ],
 		];
 
 		return $routes;

@@ -14,7 +14,7 @@ class Author {
 	public $name;
 	public $email;
 	public $password;
-	public $permission;
+	public $permissions;
 	private $jokesTable;
 
 	public function __construct(\Ninja\DatabaseTable $jokeTable) {

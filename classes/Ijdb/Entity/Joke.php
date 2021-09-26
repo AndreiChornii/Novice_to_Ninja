@@ -6,6 +6,7 @@ class Joke {
 	public $authorId;
 	public $jokedate;
 	public $joketext;
+	public $valid;
 	private $authorsTable;
 	private $author;
 	private $jokeCategoriesTable;

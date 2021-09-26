@@ -109,5 +109,24 @@ class Joke {
 					]
 				];
 	}
+
+	public function approve() {
+		$to_validate = $_POST['joke'];
+		
+		$joke = $this->jokesTable->findById($to_validate['id']);
+		
+		$joke_arr = [];
+        $joke_arr['id'] = $joke->id;
+        $joke_arr['authorid'] = $joke->authorId;
+        $joke_arr['jokedate'] = $joke->jokedate;
+        $joke_arr['joketext'] = $joke->joketext;
+        $joke_arr['valid'] = $to_validate['valid'];
+
+		// var_dump($joke_arr);
+		$this->jokesTable->save($joke_arr);
+
+		header('location: /joke/list'); 
+	}
+	
 	
 }

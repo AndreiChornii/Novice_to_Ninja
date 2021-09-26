@@ -30,8 +30,8 @@ blockquote form {  display: table-cell; width: 10%;}
 .errors ul {margin-left: 1em;}
 
 form p {clear: both;}
-input[type="checkbox"] {float: left; clear: left; width: auto; margin-right: 10px;}
-input[type="checkbox"] + label {clear: right;}
+input[type="checkbox"], input[type="radio"] {float: left; clear: left; width: auto; margin-right: 10px;}
+input[type="checkbox"] + label, input[type="radio"] + label {clear: right;}
 
 .jokelist {display: table;}
 .categories {display: table-cell; width: 20%; background-color: #333; padding: 1em; list-style-type: none;}
