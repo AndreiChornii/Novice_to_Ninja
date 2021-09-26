@@ -34,7 +34,9 @@ class Joke {
 
 		$title = 'Joke list';
 
-		
+		foreach($jokes as $joke){
+			if(!$joke->valid) $joke->joketext = '';
+		}
 
 		$author = $this->authentication->getUser();
 
@@ -78,6 +80,10 @@ class Joke {
 
 		$joke = $_POST['joke'];
 		$joke['jokedate'] = new \DateTime();
+
+		if(!$author->hasPermission(\Ijdb\Entity\Author::EDIT_USER_ACCESS)){
+			$joke['valid'] = 0;
+		}
 
 		$jokeEntity = $author->addJoke($joke);
 
